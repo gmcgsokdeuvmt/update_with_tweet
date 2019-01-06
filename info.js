@@ -6,6 +6,7 @@ $(function(){
     //HTMLを生成
     $.get('update_tweets.jsonl', function(data) {
         $(data).each(function(){
+            this = JSON.parse(this);
             console.log(this);
             $('<tr>'+
             '<th>'+'day'+'</th>'+
