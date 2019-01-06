@@ -4,7 +4,7 @@ $(function(){
 $("table.tbl tbody").html("");
 
 //HTMLを生成
-$.getJSON("data.json", function(data){
+$.getJSON("update_tweets.jsonl", function(data){
 $(data.release).each(function(){
 $('<tr>'+
 '<th>'+this.day+'</th>'+
