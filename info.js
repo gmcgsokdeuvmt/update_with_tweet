@@ -5,14 +5,11 @@ $(function(){
 
     //HTMLを生成
     $.get('update_tweets.jsonl', function(data) {
-        console.log(data);
         data = data.split('\n')
         data.pop()
-        console.log(data);
         data = data.map(function(x) {
             return JSON.parse(x);
         });
-        console.log(data);
         $(data).each(function(){
             $('<tr>'+
             '<th>'+'day'+'</th>'+
