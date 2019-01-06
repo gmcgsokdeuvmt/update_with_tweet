@@ -5,14 +5,15 @@ $(function(){
 
     //HTMLを生成
     $.get('update_tweets.jsonl', function(data) {
+        console.log(data);
         $(data).each(function(){
-            this = JSON.parse(this);
-            console.log(this);
+            record = JSON.parse(this);
+            console.log(record);
             $('<tr>'+
             '<th>'+'day'+'</th>'+
             '<td class="label"><span class="' + 'label' + '">' +
-            this.user + '</span></td>'+
-            '<td>' + this.text + '</td>'+
+            record.user + '</span></td>'+
+            '<td>' + record.text + '</td>'+
             '</tr>').appendTo('table.tbl tbody');
         })
     });    
