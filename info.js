@@ -6,8 +6,10 @@ $(function(){
     //HTMLを生成
     $.get('update_tweets.jsonl', function(data) {
         console.log(data);
-        data = data.split('\n').map(function(x) {
-            return JSON.parse(x)
+        data = data.split('\n')
+        console.log(data);
+        data = data.map(function(x) {
+            return JSON.parse(x);
         });
         console.log(data);
         $(data).each(function(){
