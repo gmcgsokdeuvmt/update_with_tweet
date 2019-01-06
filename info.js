@@ -5,7 +5,9 @@ $(function(){
 
     //HTMLを生成
     $.get('update_tweets.jsonl', function(data) {
-        console.log(data);
+        data = data.split('\n').map(function(x) {
+            return JSON.parse(x)
+        });
         $(data).each(function(){
             record = JSON.parse(this);
             console.log(record);
